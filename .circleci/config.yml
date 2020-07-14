@@ -1,4 +1,3 @@
-version: 2.1
 jobs:
    build:
      working_directory: ~/ccibuild
@@ -13,7 +12,7 @@ jobs:
        - run: sudo pip install sklearn
        - run: sudo python3 -m pip install ipykernel
        - run: sudo python3 -m ipykernel install --user
-       - run: jupyter nbconvert --to html --execute ./ml.ipynb
+       - run: jupyter nbconvert --to html --execute ./Untitled.ipynb
        - store_artifacts:
-           path: ./ml.html
-           destination: ml.html
+           path: ./Untitled.html
+           destination: Untitled.html
