@@ -1,18 +1,20 @@
+version: 2.1
+
 jobs:
-   build:
-     working_directory: ~/ccibuild
-     docker:
-       - image: circleci/python:3.6.4
-     steps:
-       - checkout
-       - run: sudo pip install jupyter_client
-       - run: sudo pip install nbconvert
-       - run: sudo pip install numpy
-       - run: sudo pip install matplotlib
-       - run: sudo pip install sklearn
-       - run: sudo python3 -m pip install ipykernel
-       - run: sudo python3 -m ipykernel install --user
-       - run: jupyter nbconvert --to html --execute ./Untitled.ipynb
-       - store_artifacts:
-           path: ./Untitled.html
-           destination: Untitled.html
+  build:
+    working_directory: ~/ccibuild
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run: sudo pip install jupyter_client
+      - run: sudo pip install nbconvert
+      - run: sudo pip install numpy
+      - run: sudo pip install matplotlib
+      - run: sudo pip install sklearn
+      - run: sudo python3 -m pip install ipykernel
+      - run: sudo python3 -m ipykernel install --user
+      - run: jupyter nbconvert --to html --execute ./Untitled.ipynb
+      - store_artifacts:
+          path: ./Untitled.html
+          destination: Untitledl.html
